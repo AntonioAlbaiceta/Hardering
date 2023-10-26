@@ -1,0 +1,69 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 1.1 Bastionado</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="BIOS"
+                  title="Proyecto 1.1 Bastionado"
+                  environment="web"
+                  feedback-link="prueba">
+    
+      <google-codelab-step label="Introduccion" duration="0">
+        <p>En la era digital actual, la ciberseguridad se ha convertido en una preocupación fundamental para individuos y organizaciones por igual. La creciente sofisticación de las amenazas cibernéticas exige una atención meticulosa a la seguridad de los sistemas informáticos.</p>
+<p>Este trabajo proporcionará una guía detallada sobre cómo establecer parámetros en la BIOS de Windows 11 con el fin de crear un bastión sólido de ciberseguridad. La seguridad cibernética es un desafío constante y en constante evolución, y esta investigación busca proporcionar a los usuarios de Windows 11 las herramientas y el conocimiento necesarios para proteger sus sistemas de manera efectiva en un entorno digital cada vez más amenazante.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Comenzamos" duration="0">
+        <p>El primer paso es entrar en la BIOS de nuestro equipo, para esta forma podemos hacerlo de varias formas.</p>
+<p>Una de ellas es cuando el equipo se esta iniciando pulsar una serie de teclas que cambiaran en funcion de nuestra placa base, normalmente suelen ser F2,F10,F12, Supr, Del.</p>
+<p>En este caso vamos a entrar en BIOS con un comando en PowerShell como administrador.</p>
+<p>Comando —&gt; shutdown /r /fw /t 0</p>
+<p class="image-container"><img alt="Untitled" src="img/5ff5d1ef72f949.png"></p>
+<p>Una vez ejecutado el comando nos reiniciara el ordenador y nos accedera automaticamente a la BIOS.</p>
+<p class="image-container"><img alt="Untitled" src="img/972b1c2a1d198119.jpeg"></p>
+<p>En este punto iremos a la pestaña de seguridad.</p>
+<p>Alli podremos poner contraseña de administrador y una vez puesta nos dara la opcion a poner contraseña de usuario o Power On.</p>
+<p class="image-container"><img alt="Untitled" src="img/f86b2ebea3ca48a3.jpeg"></p>
+<p class="image-container"><img alt="Untitled" src="img/a53af12972d6c1a5.jpeg"></p>
+<p>Ahora entramos en la pestaña Boot y modificamos unos cuantos parametros.</p>
+<p class="image-container"><img alt="Untitled" src="img/69609d58e1ad47dc.jpeg"></p>
+<p>Ahora tocaremos tanto el orden de arranque como deshabilitaremos los arranques externos que no necesistemos.</p>
+<p>En nuestro caso hemos considerado dejar el arranque por red, pero se podria quitar perfectamente y no tendriamos ningun problema.</p>
+<p class="image-container"><img alt="Untitled" src="img/4d904487f7fdbb86.jpeg"></p>
+<p>Como podemos ver hemos deshabilitado el arranque por dispositivos USB y el orden de arranque viene por defecto en el orden mas optimo hablando de ciberseguridad asi que no tendremos que tocar nada.</p>
+<p>Pero para cambiar estos parametros, tendremos que poner en la opcin Boot Option #1, nuestro dispositivo HDD o SSD.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
