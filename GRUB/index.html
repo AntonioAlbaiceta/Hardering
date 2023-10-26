@@ -1,0 +1,73 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 1.2 Bastionado</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="GRUB"
+                  title="Proyecto 1.2 Bastionado"
+                  environment="web"
+                  feedback-link="prueba">
+    
+      <google-codelab-step label="GRUB" duration="0">
+        <p>En esta introducción, exploraremos la importancia de bastionar el arranque de un sistema Debian, resaltando los riesgos asociados con un arranque no protegido y describiendo los conceptos y las técnicas clave que se utilizan para fortificar esta etapa crítica. Además, destacaremos cómo la seguridad en el arranque no solo protege el sistema en sí, sino que también puede ser un componente crucial para cumplir con estándares de seguridad y regulaciones específicas en entornos críticos.</p>
+<p>Una vez estemos dentro del sistema entraremos con la terminal como root y empezaremos a configurar.</p>
+<p class="image-container"><img alt="Untitled" src="img/66015c8a07236148.png"></p>
+<p>Introducimos este comando para acceder y poder modificar ciertos parametros.</p>
+<p>Pero antes de ello para asegurarnos de que tuvieramos algun fallo podemos hacer una copia de seguridad por si algo fallara.</p>
+<p class="image-container"><img alt="Untitled" src="img/a992e800fca2ac91.png"></p>
+<p>Este paso vamos a cambiar el GRUB_TIMEOUT de valor 5 a 0 como se muestra en la imagen, esto sirve para ocultar el GRUB en el arranque del sistema. Ademas tambien tenemos que escribir la linea GRUB_TIMEOUT_STYLE=hidden para que se oculte el tiempo del grub.</p>
+<p class="image-container"><img alt="Untitled" src="img/73378652659dbfd.png"></p>
+<p>Una vez hagamos esto guardamos los cambios  y salimos.</p>
+<p>Despues aplicamos el comando update-grub para que se actualicen los datos.</p>
+<p class="image-container"><img alt="Untitled" src="img/83e3888ec07f9842.png"></p>
+<p>El paso siguiente que vamos a ejecutar es el de encriptar nuestra contraseña.</p>
+<p>Para ello ejecutaremos el comando que vemos en la imagen y es MUY IMPORTANTE, que guardemos el resultado del hash para mas adelante.</p>
+<p class="image-container"><img alt="Untitled" src="img/aa6fe6ac2050b01c.png"></p>
+<p>Ahora entraremos en el archivo de configuracion.</p>
+<p class="image-container"><img alt="Untitled" src="img/f9e0f6bead0c0988.png"></p>
+<p>Y dentro de este pondremos las dos ultimas lineas que vemos acontinuacion.</p>
+<p>en superusers pondremos el nombre que nos corresponda y en la contraseña escribiremos el nombre y pegaremos la contraseña encriptada que se nos ofrecio. La cual dijimos de guardar para esta ocasion.</p>
+<p class="image-container"><img alt="Untitled" src="img/4071c2f284d1396b.png"></p>
+<p>Guardamos y salimos del archivo de configuracion.</p>
+<p>Ahora tenemos que volver a actualizar los datos.</p>
+<p class="image-container"><img alt="Untitled" src="img/147abb86d7573dc4.png"></p>
+<p>Ahora vamos a archivar los datos con fecha para saber cuando se hicieron los cambios</p>
+<p class="image-container"><img alt="Untitled" src="img/9ef33588d71b9d38.png"></p>
+<p>Por ultimo lo que vamos hacer es dar los permisos necesarios para que no tuvieramos problemas con que nadie pudiera editar el archivo.</p>
+<p class="image-container"><img alt="Untitled" src="img/e0a9ce7139068c5b.png"></p>
+<p>Aqui tenemos una comprobacion de que todo funciona correctamente ya que al iniciar el equipo nos pide contraseña.</p>
+<p class="image-container"><img alt="Untitled" src="img/9a186f74843b7a8a.png"></p>
+<p>En conclusión, un buen bastionado del arranque en un sistema Debian o cualquier otro sistema operativo es esencial para garantizar la seguridad y la integridad desde el momento en que el sistema se inicia.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
